@@ -12,8 +12,5 @@
   "action": {
     "default_title": "Greeat",
     "default_popup": "index.html"
-  },
-  "permissions": [
-    "storage"
-  ]
+  }
 }
