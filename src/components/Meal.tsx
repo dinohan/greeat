@@ -33,6 +33,7 @@ export default function Meal({
             group={menu.group}
             calorie={menu.calorie}
             image={menu.image}
+            color={menu.color}
           />
         )) }
       </ul>
@@ -52,6 +53,7 @@ export function MealSkeleton() {
             name="메뉴 이름"
             group="그룹"
             calorie={0}
+            color="#000"
           />
         )) }
       </ul>

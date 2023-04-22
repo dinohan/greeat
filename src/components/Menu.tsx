@@ -4,12 +4,14 @@ export default function Menu({
   group,
   calorie,
   image,
+  color,
 }: {
   id: string
   name: string
   group: string
   calorie: number
   image?: string
+  color: string
 }) {
   return (
     <li className="list_item_wrapper menu_wrapper">
@@ -19,7 +21,9 @@ export default function Menu({
           ? <img src={image} alt={name} />
           : <div className="no_image" />
         }
-        <div className="menu_id" >{ id } </div>
+        <div className="menu_id" style={{
+          backgroundColor: `${color}88`,
+        }}>{ id } </div>
       </div>
       <div className="menu_description">
         <div>{group}</div>

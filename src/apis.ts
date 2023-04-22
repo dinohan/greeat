@@ -6,6 +6,7 @@ export interface Menu {
   image?: string
   group: string
   id: ID
+  color: string
 }
 
 export interface Status {
@@ -109,6 +110,7 @@ export async function getMenus(dateString: string) {
     image: meal.image_url_g,
     group: meal.group_of_g,
     id: 'G',
+    color: '#FFB71E',
   }
 
   const R = {
@@ -117,6 +119,7 @@ export async function getMenus(dateString: string) {
     image: meal.image_url_r,
     group: meal.group_of_r,
     id: 'R',
+    color: '#FF6D2E',
   }
 
   const E = {
@@ -125,6 +128,7 @@ export async function getMenus(dateString: string) {
     image: meal.image_url_e,
     group: meal.group_of_e,
     id: 'E',
+    color: '#00CD7C',
   }
 
   const menus = [G, R, E]
