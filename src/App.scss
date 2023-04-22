@@ -48,12 +48,38 @@
   }
 
   .menu_image_wrapper {
+    position: relative;
     margin-top: 0.5rem;
     width: 100%;
     aspect-ratio: 16/12;
 
     border-radius: 8px;
     overflow: hidden;
+
+    .menu_id {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      font-size: 4rem;
+      font-weight: 500;
+      opacity: 0;
+      color: #fff;
+    }
+
+
+    &:hover {
+      .menu_id {
+        opacity: 1;
+      }
+    }
 
     img {
       height: 100%;
@@ -77,7 +103,6 @@
       }
     }
   }
-
 }
 
 .status_wrapper {
