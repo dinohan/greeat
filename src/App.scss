@@ -1,0 +1,95 @@
+#root {
+  width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.App_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.menu_list {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.list_item_wrapper {
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+.menu_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .menu_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    padding: 0 0.25rem;
+  }
+
+  .menu_description {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem;  
+    font-size: 0.8rem;
+    color: #525252;
+  }
+
+  .menu_image_wrapper {
+    margin-top: 0.5rem;
+    width: 100%;
+    aspect-ratio: 16/12;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .no_image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      background-color: #eaeaea;
+
+      &::after {
+        content: "No Image";
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #a0a0a0;
+      }
+    }
+  }
+
+}
+
+.status_wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+
+  & > progress {
+    flex: 1;
+  }
+
+  .status_number {
+    margin-left: 0.5rem;
+  }
+}
