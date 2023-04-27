@@ -1,9 +1,11 @@
 import React from 'react'
-import { useQuery } from 'react-query'
+
 import classNames from 'classnames'
+import { useQuery } from 'react-query'
 
 import { getStatuses } from '@/apis/getStatuses'
 import commonStyles from '@/styles/common.module.scss'
+
 import styles from './Status.module.scss'
 
 const ONE_MINUTE = 1000 * 60
