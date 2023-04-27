@@ -98,7 +98,7 @@ export async function getDailyMealStatus(dateString: string) {
 }
 
 export async function getMenus(dateString: string) {
-  const meal =  await getMeal(dateString)
+  const meal = await getMeal(dateString)
 
   if (!meal) {
     return []

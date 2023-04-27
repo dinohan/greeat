@@ -1,19 +1,24 @@
-import { Suspense, useDeferredValue, useState } from 'react'
-import Status, { StatusSkeleton } from './components/Status';
-import Meal, { MealSkeleton } from './components/Meal';
+import React, { Suspense, useDeferredValue, useState } from 'react'
+import Status, { StatusSkeleton } from './components/Status'
+import Meal, { MealSkeleton } from './components/Meal'
 import './App.scss'
 
 function App() {
   const [date, setDate] = useState(() => {
-    const today = new Date();
+    const today = new Date()
 
     function nextDay(offset: number) {
       today.setDate(today.getDate() + offset)
     }
 
-    if (today.getHours() >= 14) { nextDay(1) }
-    if (today.getDay() === 6) { nextDay(2) }
-    else if (today.getDay() === 0) { nextDay(1) }
+    if (today.getHours() >= 14) {
+      nextDay(1)
+    }
+    if (today.getDay() === 6) {
+      nextDay(2)
+    } else if (today.getDay() === 0) {
+      nextDay(1)
+    }
 
     return today
   })
@@ -50,17 +55,20 @@ function App() {
 
   const isPending = deferredDateString !== dateString
 
-
   return (
     <div className="App">
       <header className="App_header">
         <button onClick={handlePrevDay}>이전</button>
-        <time><h2>{ Intl.DateTimeFormat('ko-KR', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          weekday: 'short',
-        }).format(date) }</h2></time>
+        <time>
+          <h2>
+            {Intl.DateTimeFormat('ko-KR', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              weekday: 'short',
+            }).format(date)}
+          </h2>
+        </time>
         <button onClick={handleNextDay}>다음</button>
       </header>
 
@@ -75,7 +83,7 @@ function App() {
           dateString={deferredDateString}
           isPending={isPending}
         />
-        </Suspense>
+      </Suspense>
     </div>
   )
 }

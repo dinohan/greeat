@@ -42,7 +42,7 @@
   .menu_description {
     display: flex;
     justify-content: space-between;
-    padding: 0.25rem;  
+    padding: 0.25rem;
     font-size: 0.8rem;
     color: #525252;
   }
@@ -74,7 +74,6 @@
       color: #fff;
     }
 
-
     &:hover {
       .menu_id {
         opacity: 1;
@@ -96,7 +95,7 @@
       background-color: #eaeaea;
 
       &::after {
-        content: "No Image";
+        content: 'No Image';
         font-size: 1.2rem;
         font-weight: 500;
         color: #a0a0a0;
