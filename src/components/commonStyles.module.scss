@@ -1,0 +1,11 @@
+.menu_list {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.list_item_wrapper {
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}

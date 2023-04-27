@@ -1,0 +1,13 @@
+.status_wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+
+  & > progress {
+    flex: 1;
+  }
+
+  .status_number {
+    margin-left: 0.5rem;
+  }
+}

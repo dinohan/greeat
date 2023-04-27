@@ -1,5 +1,9 @@
 import React from 'react'
 
+import styles from './Menu.module.scss'
+import commonStyles from '../commonStyles.module.scss'
+import classNames from 'classnames'
+
 export default function Menu({
   id,
   name,
@@ -16,19 +20,24 @@ export default function Menu({
   color: string
 }) {
   return (
-    <li className="list_item_wrapper menu_wrapper">
-      <h2 className="menu_name">{name}</h2>
-      <div className="menu_image_wrapper">
+    <li
+      className={classNames([
+        styles.menu_wrapper,
+        commonStyles.list_item_wrapper,
+      ])}
+    >
+      <h2 className={styles.menu_name}>{name}</h2>
+      <div className={styles.menu_image_wrapper}>
         {image ? (
           <img
             src={image}
             alt={name}
           />
         ) : (
-          <div className="no_image" />
+          <div className={styles.no_image} />
         )}
         <div
-          className="menu_id"
+          className={styles.menu_id}
           style={{
             backgroundColor: `${color}88`,
           }}
@@ -36,7 +45,7 @@ export default function Menu({
           {id}{' '}
         </div>
       </div>
-      <div className="menu_description">
+      <div className={styles.menu_description}>
         <div>{group}</div>
         <div>{calorie} kcal</div>
       </div>

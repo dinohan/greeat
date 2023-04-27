@@ -1,7 +1,9 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import { getMenus } from '../apis'
-import Menu from './Menu'
+import Menu from './Menu/Menu'
+
+import commonStyles from './commonStyles.module.scss'
 
 export default function Meal({
   dateString,
@@ -22,7 +24,7 @@ export default function Meal({
   return (
     <>
       <ul
-        className="menu_list"
+        className={commonStyles.menu_list}
         style={{
           opacity: isPending ? 0.5 : 1,
         }}
@@ -46,7 +48,7 @@ export default function Meal({
 export function MealSkeleton() {
   return (
     <ul
-      className="menu_list"
+      className={commonStyles.menu_list}
       style={{
         opacity: 0.5,
       }}

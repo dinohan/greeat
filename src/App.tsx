@@ -1,7 +1,7 @@
 import React, { Suspense, useDeferredValue, useState } from 'react'
 import Status, { StatusSkeleton } from './components/Status'
 import Meal, { MealSkeleton } from './components/Meal'
-import './App.scss'
+import styles from './App.module.scss'
 
 function App() {
   const [date, setDate] = useState(() => {
@@ -56,8 +56,8 @@ function App() {
   const isPending = deferredDateString !== dateString
 
   return (
-    <div className="App">
-      <header className="App_header">
+    <>
+      <header className={styles.App_header}>
         <button onClick={handlePrevDay}>이전</button>
         <time>
           <h2>
@@ -72,19 +72,21 @@ function App() {
         <button onClick={handleNextDay}>다음</button>
       </header>
 
-      <Suspense fallback={<MealSkeleton />}>
-        <Meal
-          dateString={deferredDateString}
-          isPending={isPending}
-        />
-      </Suspense>
-      <Suspense fallback={<StatusSkeleton />}>
-        <Status
-          dateString={deferredDateString}
-          isPending={isPending}
-        />
-      </Suspense>
-    </div>
+      <main>
+        <Suspense fallback={<MealSkeleton />}>
+          <Meal
+            dateString={deferredDateString}
+            isPending={isPending}
+          />
+        </Suspense>
+        <Suspense fallback={<StatusSkeleton />}>
+          <Status
+            dateString={deferredDateString}
+            isPending={isPending}
+          />
+        </Suspense>
+      </main>
+    </>
   )
 }
 

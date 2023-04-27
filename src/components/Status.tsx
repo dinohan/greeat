@@ -1,6 +1,9 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import { getStatuses } from '../apis'
+import styles from './Status.module.scss'
+import commonStyles from './commonStyles.module.scss'
+import classNames from 'classnames'
 
 const ONE_MINUTE = 1000 * 60
 
@@ -26,7 +29,7 @@ export default function Status({
 
   return (
     <ul
-      className="menu_list"
+      className={commonStyles.menu_list}
       style={{
         opacity: isPending ? 0.5 : 1,
       }}
@@ -34,13 +37,16 @@ export default function Status({
       {statuses?.map((status) => (
         <li
           key={status.id}
-          className="list_item_wrapper status_wrapper"
+          className={classNames([
+            commonStyles.list_item_wrapper,
+            styles.status_wrapper,
+          ])}
         >
           <progress
             value={status.current}
             max={status.total}
           />
-          <span className="status_number">
+          <span className={styles.status_number}>
             {status.current} / {status.total}
           </span>
         </li>
@@ -52,19 +58,22 @@ export default function Status({
 export function StatusSkeleton() {
   return (
     <ul
-      className="menu_list"
+      className={commonStyles.menu_list}
       style={{ opacity: 0.5 }}
     >
       {['G', 'R', 'E'].map((i) => (
         <li
           key={i}
-          className="list_item_wrapper status_wrapper"
+          className={classNames([
+            commonStyles.list_item_wrapper,
+            styles.status_wrapper,
+          ])}
         >
           <progress
             value={0}
             max={100}
           />
-          <span className="status_number">-- / --</span>
+          <span className={styles.status_number}>-- / --</span>
         </li>
       ))}
     </ul>

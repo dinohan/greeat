@@ -1,31 +1,3 @@
-#root {
-  width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-.App_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.menu_list {
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-}
-
-.list_item_wrapper {
-  width: 100%;
-  flex: 1;
-  min-width: 0;
-}
-
 .menu_wrapper {
   display: flex;
   flex-direction: column;
@@ -101,19 +73,5 @@
         color: #a0a0a0;
       }
     }
-  }
-}
-
-.status_wrapper {
-  display: flex;
-  align-items: center;
-  padding: 0 0.25rem;
-
-  & > progress {
-    flex: 1;
-  }
-
-  .status_number {
-    margin-left: 0.5rem;
   }
 }
