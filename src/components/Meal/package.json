@@ -1,0 +1,6 @@
+{
+  "name": "Meal",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Meal.tsx"
+}

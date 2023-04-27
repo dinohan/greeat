@@ -1,8 +1,8 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import styles from './Menu.module.scss'
-import commonStyles from '../commonStyles.module.scss'
-import classNames from 'classnames'
+import commonStyles from '../../styles/common.module.scss'
 
 export default function Menu({
   id,
