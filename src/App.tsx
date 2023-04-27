@@ -1,6 +1,6 @@
 import React, { Suspense, useDeferredValue, useState } from 'react'
-import Status, { StatusSkeleton } from './components/Status'
-import Meal, { MealSkeleton } from './components/Meal'
+import Status, { StatusSkeleton } from '@/components/Status'
+import Meal, { MealSkeleton } from '@/components/Meal'
 import styles from './App.module.scss'
 
 function App() {

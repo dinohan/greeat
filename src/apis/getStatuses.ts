@@ -1,4 +1,4 @@
-import { Status } from '../types/Status'
+import { Status } from '@/types/Status'
 
 interface StatusDTO {
   bf_number_of_meals: {

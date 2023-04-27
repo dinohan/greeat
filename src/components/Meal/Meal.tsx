@@ -1,8 +1,9 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import Menu from '../Menu'
-import commonStyles from '../../styles/common.module.scss'
-import { getMenus } from '../../apis/getMenus'
+
+import Menu from '@/components/Menu'
+import commonStyles from '@/styles/common.module.scss'
+import { getMenus } from '@/apis/getMenus'
 
 export default function Meal({
   dateString,
