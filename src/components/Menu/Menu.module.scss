@@ -1,77 +1,162 @@
 .menu_wrapper {
   display: flex;
+}
+
+.menu_card {
+  height: 100%;
+}
+
+.menu_header {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.menu_footer {
   flex-direction: column;
   align-items: stretch;
+  gap: 0.8rem;
+  padding-top: 0;
+}
 
-  .menu_name {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    text-align: center;
-    padding: 0 0.25rem;
-  }
+.menu_heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
 
-  .menu_description {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.25rem;
-    font-size: 0.8rem;
-    color: #525252;
-  }
+.menu_badge {
+  display: inline-flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
 
-  .menu_image_wrapper {
-    position: relative;
-    margin-top: 0.5rem;
+.menu_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.menu_image_wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/12;
+  overflow: hidden;
+  background-color: #f4f4f5;
+
+  img {
+    height: 100%;
     width: 100%;
-    aspect-ratio: 16/12;
+    object-fit: cover;
+  }
 
-    border-radius: 8px;
-    overflow: hidden;
+  .no_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background:
+      linear-gradient(135deg, #f4f4f5 0%, #fafafa 55%, #f4f4f5 100%);
 
-    .menu_id {
-      position: absolute;
-      display: flex;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      font-size: 4rem;
-      font-weight: 500;
-      opacity: 0;
-      color: #fff;
-    }
-
-    &:hover {
-      .menu_id {
-        opacity: 1;
-      }
-    }
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .no_image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 100%;
-      background-color: #eaeaea;
-
-      &::after {
-        content: 'No Image';
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: #a0a0a0;
-      }
+    &::after {
+      content: 'No Image';
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #a1a1aa;
     }
   }
+}
+
+.meta_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.meta_chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  background-color: #fafafa;
+  border: 1px solid #f1f5f9;
+}
+
+.status_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.45rem;
+}
+
+.status_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.status_label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #71717a;
+}
+
+.status_value {
+  color: #18181b;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.meta_label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #71717a;
+}
+
+.meta_value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #18181b;
+}
+
+.progress_trigger {
+  width: 100%;
+  cursor: default;
+}
+
+.tooltip_body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.tooltip_label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.tooltip_value {
+  font-size: 1.2rem;
+  font-weight: 500;
 }

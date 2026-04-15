@@ -1,0 +1,17 @@
+.progress_root {
+  position: relative;
+  width: 100%;
+  height: 0.8rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: #ece8e1;
+  box-shadow: inset 0 1px 2px rgba(31, 31, 31, 0.06);
+}
+
+.progress_indicator {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: var(--progress-color, #1f1f1f);
+  transition: transform 180ms ease-out;
+}
