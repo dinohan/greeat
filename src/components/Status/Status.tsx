@@ -26,7 +26,12 @@ export default function Status({
     }
   )
 
-  if (!statuses?.every((status) => !!status.current && !!status.total)) {
+  if (
+    !statuses?.every(
+      (status) =>
+        Number.isFinite(status.current) && Number.isFinite(status.total)
+    )
+  ) {
     return <StatusSkeleton />
   }
 
