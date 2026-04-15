@@ -8,6 +8,8 @@ import { Status } from '@/types/Status'
 
 const CARD_WIDTH = 1200
 const YOGA_WASM_URL = '/yoga.wasm'
+const SHARE_IMAGE_TIMEOUT_MS = 12000
+const CLIPBOARD_WRITE_TIMEOUT_MS = 3000
 const SHARE_FONT_FAMILY = 'Pretendard'
 const SHARE_FONT_URLS = {
   regular: '/fonts/Pretendard-Regular.woff',
@@ -71,7 +73,12 @@ const formatter = new Intl.DateTimeFormat('ko-KR', {
 export async function shareMealImage(
   input: ShareImageInput
 ): Promise<ShareResult> {
-  const blobPromise = createShareImageBlob(input)
+  const rawBlobPromise = createShareImageBlob(input)
+  const blobPromise = withTimeout(
+    rawBlobPromise,
+    SHARE_IMAGE_TIMEOUT_MS,
+    'Share image generation timed out.'
+  )
 
   try {
     await copyBlobToClipboard(blobPromise)
@@ -392,11 +399,15 @@ async function copyBlobToClipboard(blobPromise: Promise<Blob>) {
     throw new Error('Clipboard image copy is not supported.')
   }
 
-  await navigator.clipboard.write([
-    new ClipboardItem({
-      'image/png': blobPromise,
-    }),
-  ])
+  await withTimeout(
+    navigator.clipboard.write([
+      new ClipboardItem({
+        'image/png': blobPromise,
+      }),
+    ]),
+    CLIPBOARD_WRITE_TIMEOUT_MS,
+    'Clipboard write timed out.'
+  )
 }
 
 function downloadBlob(blob: Blob, fileName: string) {
@@ -530,6 +541,28 @@ async function fetchFontData(url: string) {
   }
 
   return response.arrayBuffer()
+}
+
+function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs: number,
+  message: string
+) {
+  return new Promise<T>((resolve, reject) => {
+    const timeoutId = window.setTimeout(() => {
+      reject(new Error(message))
+    }, timeoutMs)
+
+    promise
+      .then((value) => {
+        window.clearTimeout(timeoutId)
+        resolve(value)
+      })
+      .catch((error) => {
+        window.clearTimeout(timeoutId)
+        reject(error)
+      })
+  })
 }
 
 function getMenuNameFontSize(name: string) {
