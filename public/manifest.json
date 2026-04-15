@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Greeat",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "딩신의 점심 메뉴",
   "icons": {
     "16": "icons/icon_16.png",
