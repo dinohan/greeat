@@ -20,8 +20,6 @@ li {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
 }
 
 h1 {
@@ -41,7 +39,6 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #ebebeb;
-  cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
@@ -49,11 +46,13 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 #root {
-  width: 900px;
+  width: min(900px, 100%);
+  min-width: 0;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;

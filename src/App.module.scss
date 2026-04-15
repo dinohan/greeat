@@ -1,40 +1,68 @@
 .App_header {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #eaeaea;
 }
 
-.App_header_nav {
-  justify-self: start;
+.App_header_spacer {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.App_header_date_group {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  justify-self: center;
+  gap: 0.625rem;
 }
 
 .App_header_time {
   min-width: 0;
   text-align: center;
+  display: flex;
+
+  :global(button) {
+    max-width: 100%;
+  }
 }
 
 .App_header_actions {
+  grid-column: 3;
   display: flex;
   justify-self: end;
   align-items: center;
-  gap: 0.75rem;
 }
 
-.copy_button {
-  display: inline-flex;
-  height: 2.75rem;
-  width: 2.75rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border-color: #d9d9d9;
-  background-color: #f5f5f5;
+.date_button {
+  max-width: 100%;
 }
 
+.date_button_text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.App_main {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.nav_icon,
 .copy_icon,
 .copy_icon_spinning {
   width: 1.125rem;
@@ -55,23 +83,6 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-@media (max-width: 960px) {
-  .App_header {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .App_header_nav,
-  .App_header_actions {
-    justify-self: center;
-  }
-
-  .App_header_actions {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 
 @keyframes copy-spin {
