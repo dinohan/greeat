@@ -6,8 +6,32 @@ import { getMenus } from '@/apis/getMenus'
 import { getStatuses } from '@/apis/getStatuses'
 import Menu from '@/components/Menu'
 import commonStyles from '@/styles/common.module.scss'
+import { Menu as MenuType } from '@/types/Menu'
 
 const ONE_MINUTE = 1000 * 60
+const DEFAULT_MENUS: MenuType[] = [
+  {
+    id: 'G',
+    name: '메뉴 정보 없음',
+    group: '-',
+    calorie: 0,
+    color: '#FFB71E',
+  },
+  {
+    id: 'R',
+    name: '메뉴 정보 없음',
+    group: '-',
+    calorie: 0,
+    color: '#FF6D2E',
+  },
+  {
+    id: 'E',
+    name: '메뉴 정보 없음',
+    group: '-',
+    calorie: 0,
+    color: '#00CD7C',
+  },
+]
 
 export default function Meal({
   dateString,
@@ -41,6 +65,7 @@ export default function Meal({
       )
       .map((status) => [status.id, status])
   )
+  const visibleMenus = menus?.length ? menus : DEFAULT_MENUS
 
   return (
     <ul
@@ -49,7 +74,7 @@ export default function Meal({
         opacity: isPending ? 0.5 : 1,
       }}
     >
-      {menus?.map((menu) => (
+      {visibleMenus.map((menu) => (
         <Menu
           key={`${dateString}-${menu.id}`}
           id={menu.id}

@@ -36,6 +36,7 @@ export default function Menu({
   color: string
   status?: Status
 }) {
+  const isPlaceholderMenu = name === '메뉴 정보 없음'
   const current =
     status && Number.isFinite(status.current) ? status.current : undefined
   const total = status && Number.isFinite(status.total) ? status.total : undefined
@@ -73,7 +74,16 @@ export default function Menu({
             >
               {id}
             </span>
-            <CardTitle className={styles.menu_name}>{name}</CardTitle>
+            <CardTitle
+              className={styles.menu_name}
+              style={
+                isPlaceholderMenu
+                  ? { color: '#71717a' }
+                  : undefined
+              }
+            >
+              {name}
+            </CardTitle>
           </div>
         </CardHeader>
         <CardFooter className={styles.menu_footer}>
