@@ -7,8 +7,8 @@
 }
 
 .menu_header {
-  padding-top: 0.85rem;
-  padding-bottom: 0.65rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .menu_footer {
@@ -33,9 +33,9 @@
   justify-content: center;
   border-radius: 9999px;
   color: #fff;
-  font-size: 0.82rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.5;
   flex-shrink: 0;
 }
 
@@ -44,7 +44,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: left;
-  font-size: 0.98rem;
+  font-size: 1.6rem;
 }
 
 .menu_image_wrapper {
@@ -71,7 +71,7 @@
 
     &::after {
       content: 'No Image';
-      font-size: 1rem;
+      font-size: 1.6rem;
       font-weight: 600;
       color: #a1a1aa;
     }
@@ -90,7 +90,7 @@
   gap: 0.4rem;
   min-width: 0;
   max-width: 100%;
-  padding: 0.38rem 0.62rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 9999px;
   background-color: #fafafa;
   border: 1px solid #f1f5f9;
@@ -111,20 +111,20 @@
 }
 
 .status_label {
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #71717a;
 }
 
 .status_value {
   color: #18181b;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .meta_label {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   letter-spacing: 0.01em;
   color: #71717a;
 }
@@ -133,8 +133,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #18181b;
 }
 
@@ -150,10 +150,12 @@
 }
 
 .tooltip_label {
+  font-size: 1.2rem;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.72);
 }
 
 .tooltip_value {
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 500;
 }

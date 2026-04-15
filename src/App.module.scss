@@ -1,16 +1,16 @@
 .App_header {
   display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
+  grid-template-columns: 3.2rem minmax(0, 1fr) 3.2rem;
   align-items: center;
   gap: 0.75rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
   border-bottom: 1px solid #eaeaea;
 }
 
 .App_header_spacer {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
 }
 
 .App_header_date_group {
@@ -51,15 +51,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.5;
 }
 
 .App_main {
   width: 100%;
-  overflow-x: auto;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.8rem;
 }
 
 .nav_icon,

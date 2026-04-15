@@ -1,6 +1,0 @@
-{
-  "name": "Status",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./Status.tsx"
-}
