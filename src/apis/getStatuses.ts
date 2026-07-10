@@ -1,5 +1,7 @@
 import { Status } from '@/types/Status'
 
+import { fetchGreeatApi } from './apiClient'
+
 interface StatusDTO {
   bf_number_of_meals: {
     g: number | null
@@ -29,9 +31,11 @@ interface StatusDTO {
 }
 
 export async function getDailyMealStatus(dateString: string) {
-  const url = `https://api-greeat.52g.gs/status/date/${dateString}`
-  const resposne = await fetch(url)
-  const data = await resposne.json()
+  const data = await fetchGreeatApi<{
+    data: {
+      daily_meal_status: StatusDTO
+    }
+  }>(`/status/date/${dateString}`)
   const dailyMealStatus = data.data.daily_meal_status
 
   return dailyMealStatus as StatusDTO

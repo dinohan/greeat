@@ -1,5 +1,7 @@
 import { Menu } from '@/types/Menu'
 
+import { fetchGreeatApi } from './apiClient'
+
 interface MealsDTO {
   meal_date: string
   weekday_ko: string
@@ -36,10 +38,11 @@ interface MealsDTO {
 }
 
 export async function getMeal(dateString: string) {
-  const url = `https://api-greeat.52g.gs/meals/${dateString}`
-  const resposne = await fetch(url)
-
-  const data = await resposne.json()
+  const data = await fetchGreeatApi<{
+    data?: {
+      meal?: MealsDTO
+    }
+  }>(`/meals/${dateString}`)
   const meal = data?.data?.meal
 
   return meal as MealsDTO | undefined
